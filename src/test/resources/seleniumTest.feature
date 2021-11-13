@@ -8,5 +8,5 @@ Feature: Shop
     And Sort by price ascending
     And Add first element to basket
     And Open basket
-    Then Assert "realme Watch 2 " in basket
+    Then Assert "xxxxx " in basket
     And Close browser
