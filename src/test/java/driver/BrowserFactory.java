@@ -35,8 +35,17 @@ public class BrowserFactory {
             switch (browserType) {
                 case CHROME:
 
-                    ChromeOptions chromeOptions = new ChromeOptions();
-                    desiredCapabilities.merge(chromeOptions);
+                    ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--headless");
+                    options.addArguments("--allow-running-insecure-content");
+                    options.addArguments("--window-size=1980,1080");
+                    options.addArguments("--disable-extensions");
+                    options.addArguments("--proxy-bypass-list=*");
+                    options.addArguments("--disable-gpu");
+                    options.addArguments("--disable-dev-shm-usage");
+                    options.addArguments("--no-sandbox");
+                    options.addArguments("--ignore-certificate-errors");
+                    desiredCapabilities.merge(options);
                     return getRemoteWebDriver(desiredCapabilities);
 
                 case FIREFOX:
