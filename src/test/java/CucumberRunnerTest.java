@@ -7,7 +7,8 @@ import utils.testng.listeners.TestListener;
 @Listeners(TestListener.class)
 @CucumberOptions(features = {"src/test/resources/"},
         glue={"Test"},
-        plugin = { "pretty" }
+        plugin = { "pretty",
+        "io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm"}
 
       )
 public class CucumberRunnerTest extends AbstractTestNGCucumberTests {
