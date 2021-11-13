@@ -2,7 +2,6 @@ package PageObjects;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import io.cucumber.java.eo.Se;
 
 import static Actions.SeleniumActions.jsClick;
 import static Actions.SeleniumActions.selectInDropDown;

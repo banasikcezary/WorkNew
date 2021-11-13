@@ -1,15 +1,16 @@
-package Tests.Selenium;
+package Test.Selenium;
 
 import PageObjects.BasketPage;
 import PageObjects.DevicePage;
 import PageObjects.FilterPage;
 import PageObjects.StartPage;
+
 import driver.manager.DriverManager;
 import driver.manager.DriverUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.hu.De;
+
 
 public class SeleniumTest {
     StartPage startPage=new StartPage();

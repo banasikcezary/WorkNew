@@ -1,20 +1,19 @@
-package Tests.Api;
+package Test.Api;
 
 import ApiPage.Cassh;
 import ApiPage.Rate;
+
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
 import io.restassured.filter.log.ErrorLoggingFilter;
-import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import org.hamcrest.Matchers;
-import org.testng.annotations.BeforeClass;
+
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import static io.restassured.RestAssured.given;
 
