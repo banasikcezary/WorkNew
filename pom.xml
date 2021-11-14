@@ -9,11 +9,19 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <aspectj.version>1.9.2</aspectj.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <aspectj.version>1.9.5</aspectj.version>
+        <selenium-java>3.141.59</selenium-java>
+        <cucumber-java>4.8.1</cucumber-java>
+        <cucumber-testng>4.8.1</cucumber-testng>
+        <allure-cucumber4-jvm>2.13.3</allure-cucumber4-jvm>
+        <json>20090211</json>
+        <selenide>5.24.2</selenide>
+        <log4j-core>2.10.0</log4j-core>
+        <rest-assured>4.3.3</rest-assured>
 
     </properties>
+
+
 
     <dependencies>
         <!-- biblioteki konieczne do poprawnego działania Allure -->
@@ -33,27 +41,33 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
+            <version>${selenium-java}</version>
         </dependency>
 
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>6.10.3</version>
+            <version>${cucumber-java}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>6.14.3</version>
-            <scope>test</scope>
-        </dependency>
+
+
 
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-testng</artifactId>
-            <version>6.10.4</version>
+            <version>${cucumber-testng}</version>
         </dependency>
+
+
+
+
+                <dependency>
+                    <groupId>io.qameta.allure</groupId>
+                    <artifactId>allure-cucumber4-jvm</artifactId>
+                    <version>${allure-cucumber4-jvm}</version>
+                </dependency>
+
 
 
 
@@ -66,39 +80,30 @@
         </dependency>
 
 
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-testng</artifactId>
-            <version>2.10.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
-        </dependency>
+
 
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-            <version>20090211</version>
+            <version>${json}</version>
         </dependency>
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
-            <version>5.24.2</version>
+            <version>${selenide}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>2.10.0</version>
+            <version>${log4j-core}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
-            <version>4.3.3</version>
+            <version>${rest-assured}</version>
             <scope>test</scope>
         </dependency>
 
@@ -121,7 +126,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.21.0</version>
-
                 <configuration>
 
                     <!-- parametr określający gdzie maven-surefire-plugin ma zapisywać wyniki z testów-->
@@ -134,6 +138,7 @@
                     <!--Konfiguracja Allura ze ścieżką do biblioteki aspectjweaver-->
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                        -Dcucumber.options="--plugin io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm"
                     </argLine>
                 </configuration>
                 <!--Dodanie dodatkowych zależności do maven-surefire-plugin w postaci biblioteki aspectjweaver-->
