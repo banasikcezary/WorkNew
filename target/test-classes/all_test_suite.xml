@@ -4,7 +4,6 @@
 
     <listeners>
         <listener class-name="utils.testng.listeners.TestListener"/>
-
     </listeners>
 
     <test name="test">
