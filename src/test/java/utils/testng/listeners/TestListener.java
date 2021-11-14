@@ -1,6 +1,7 @@
 package utils.testng.listeners;
 
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -8,43 +9,40 @@ import utils.ScreenShotMaker;
 
 public class TestListener implements ITestListener {
 
+    private Logger logger = LogManager.getLogger(TestListener.class);
 
     @Override
     public void onTestStart(ITestResult result) {
-        System.out.println("Test start");
+        System.out.println("On test start "+result.getName());
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        System.out.println("Test succes");
+        System.out.println("On test start "+result.getName());
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        System.out.println("Test failed");
+        logger.info("Test {} failed!", result.getName());
         ScreenShotMaker.makeScreenShot();
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        System.out.println("Test skiped");
+        logger.info("Test {} skipped!", result.getName());
     }
 
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-        System.out.println("Test failed with in succes percentage");
+        logger.info("Test {} failed!", result.getName());
         ScreenShotMaker.makeScreenShot();
     }
 
     @Override
-    public void onStart(ITestContext iTestContext) {
-
+    public void onStart(ITestContext context) {
     }
 
     @Override
-    public void onFinish(ITestContext iTestContext) {
-
+    public void onFinish(ITestContext context) {
     }
-
-
 }
