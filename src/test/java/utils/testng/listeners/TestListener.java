@@ -30,8 +30,7 @@ public class TestListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         logger.info("Test {} failed!", result.getName());
-       // ScreenShotMaker.makeScreenShot();
-        Allure.addAttachment("Fail test",new ByteArrayInputStream(((TakesScreenshot)DriverManager.getWebDriver()).getScreenshotAs(OutputType.BYTES)));
+        ScreenShotMaker.makeScreenShot();
     }
 
     @Override
@@ -42,8 +41,7 @@ public class TestListener implements ITestListener {
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
         logger.info("Test {} failed!", result.getName());
-       // ScreenShotMaker.makeScreenShot();
-        Allure.addAttachment("Fail test",new ByteArrayInputStream(((TakesScreenshot) DriverManager.getWebDriver()).getScreenshotAs(OutputType.BYTES)));
+        ScreenShotMaker.makeScreenShot();
     }
 
     @Override
