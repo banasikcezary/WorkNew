@@ -1,11 +1,17 @@
 package utils.testng.listeners;
 
+import driver.manager.DriverManager;
+import io.qameta.allure.Allure;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import utils.ScreenShotMaker;
+
+import java.io.ByteArrayInputStream;
 
 public class TestListener implements ITestListener {
 
@@ -24,7 +30,8 @@ public class TestListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         logger.info("Test {} failed!", result.getName());
-        ScreenShotMaker.makeScreenShot();
+       // ScreenShotMaker.makeScreenShot();
+        Allure.addAttachment("Fail test",new ByteArrayInputStream(((TakesScreenshot)DriverManager.getWebDriver()).getScreenshotAs(OutputType.BYTES)));
     }
 
     @Override
@@ -35,7 +42,8 @@ public class TestListener implements ITestListener {
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
         logger.info("Test {} failed!", result.getName());
-        ScreenShotMaker.makeScreenShot();
+       // ScreenShotMaker.makeScreenShot();
+        Allure.addAttachment("Fail test",new ByteArrayInputStream(((TakesScreenshot) DriverManager.getWebDriver()).getScreenshotAs(OutputType.BYTES)));
     }
 
     @Override
