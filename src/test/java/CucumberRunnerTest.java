@@ -13,7 +13,6 @@ import utils.testng.listeners.TestListener;
 }
 
       )
-@Listeners(TestListener.class)
 public class CucumberRunnerTest extends AbstractTestNGCucumberTests {
 
 
