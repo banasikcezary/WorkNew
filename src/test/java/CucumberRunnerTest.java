@@ -4,6 +4,7 @@ import io.cucumber.testng.CucumberOptions;
 import io.qameta.allure.Attachment;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import utils.ScreenShotMaker;
 import utils.testng.listeners.RetryAnalyzer;
 import utils.testng.listeners.TestListener;
 
@@ -11,11 +12,10 @@ import utils.testng.listeners.TestListener;
 @CucumberOptions(features = {"src/test/resources/"},
         glue={"Test"},
         plugin = { "pretty",
-        "io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm"
+//        "io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm"
 }
 
       )
-@Listeners(TestListener.class)
 public class CucumberRunnerTest extends AbstractTestNGCucumberTests {
 
 

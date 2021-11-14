@@ -62,11 +62,11 @@
 
 
 
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-cucumber4-jvm</artifactId>
-            <version>${allure-cucumber4-jvm}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.qameta.allure</groupId>-->
+<!--            <artifactId>allure-cucumber4-jvm</artifactId>-->
+<!--            <version>${allure-cucumber4-jvm}</version>-->
+<!--        </dependency>-->
 
 
 
@@ -133,13 +133,13 @@
                     <systemPropertyVariables>
                         <allure.results.directory>${basedir}/target/allure-results</allure.results.directory>
                     </systemPropertyVariables>
-<!--                                        <suiteXmlFiles>-->
-<!--                                            <suiteXmlFile>src/test/resources/all_test_suite.xml</suiteXmlFile>-->
-<!--                                        </suiteXmlFiles>-->
+                                        <suiteXmlFiles>
+                                            <suiteXmlFile>src/test/resources/all_test_suite.xml</suiteXmlFile>
+                                        </suiteXmlFiles>
                     <!--Konfiguracja Allura ze ścieżką do biblioteki aspectjweaver-->
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-                        -Dcucumber.options="--plugin io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm"
+<!--                        -Dcucumber.options="&#45;&#45;plugin io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm"-->
                     </argLine>
                 </configuration>
                 <!--Dodanie dodatkowych zależności do maven-surefire-plugin w postaci biblioteki aspectjweaver-->
