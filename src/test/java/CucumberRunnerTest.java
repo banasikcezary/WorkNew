@@ -5,7 +5,7 @@ import org.testng.annotations.Listeners;
 import utils.testng.listeners.TestListener;
 
 
-@Listeners(TestListener.class)
+
 @CucumberOptions(features = {"src/test/resources/"},
         glue={"Test"},
         plugin = { "pretty",
@@ -13,6 +13,7 @@ import utils.testng.listeners.TestListener;
 }
 
       )
+@Listeners(TestListener.class)
 public class CucumberRunnerTest extends AbstractTestNGCucumberTests {
 
 
