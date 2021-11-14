@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import utils.testng.listeners.RetryAnalyzer;
 import utils.testng.listeners.TestListener;
 
-@Listeners(TestListener.class)
+
 @CucumberOptions(features = {"src/test/resources/"},
         glue={"Test"},
         plugin = { "pretty",
@@ -15,6 +15,7 @@ import utils.testng.listeners.TestListener;
 }
 
       )
+@Listeners(TestListener.class)
 public class CucumberRunnerTest extends AbstractTestNGCucumberTests {
 
 
