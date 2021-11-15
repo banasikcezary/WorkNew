@@ -10,11 +10,6 @@ import driver.manager.DriverUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.qameta.allure.Allure;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-
-import java.io.ByteArrayInputStream;
 
 
 public class SeleniumTest {
@@ -54,7 +49,6 @@ filterPage.clickApproveFilter();
     public void add_first_element_to_basket() {
 devicePage.chooseFirtDeviceWithList();
 devicePage.clickOnAddToBasket();
-
     }
     @When("Open basket")
     public void open_basket() {
@@ -68,6 +62,7 @@ basketPage.assertFirstBasketElement(string);
     }
     @Then("Close browser")
     public void close_browser() {
+
         DriverManager.disposeDriver();
     }
 
