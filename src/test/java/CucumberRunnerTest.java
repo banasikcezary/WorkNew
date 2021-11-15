@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(features = {"src/test/resources/"},
         glue={"Test"},
         plugin = { "pretty",
-        "io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm"
+        "io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm"
 }
 
 )
