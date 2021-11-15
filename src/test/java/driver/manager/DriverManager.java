@@ -1,17 +1,9 @@
 package driver.manager;
 
 import driver.BrowserFactory;
-import io.cucumber.core.api.Scenario;
-import io.cucumber.core.event.Status;
-import io.qameta.allure.Allure;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import utils.ScreenShotMaker;
 
-import java.io.ByteArrayInputStream;
+import org.openqa.selenium.WebDriver;
+
 
 import static configuration.RunProperties.getBrowserToRun;
 import static configuration.RunProperties.getIsRemoteRun;
