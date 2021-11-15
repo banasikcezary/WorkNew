@@ -70,10 +70,10 @@
 
         <dependency>
             <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-testng</artifactId>
+            <artifactId>allure-junit4</artifactId>
             <version>2.16.1</version>
+            <scope>test</scope>
         </dependency>
-
 
 
 
