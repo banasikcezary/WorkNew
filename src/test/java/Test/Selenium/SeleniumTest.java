@@ -10,6 +10,11 @@ import driver.manager.DriverUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.qameta.allure.Allure;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
+import java.io.ByteArrayInputStream;
 
 
 public class SeleniumTest {
@@ -49,6 +54,8 @@ filterPage.clickApproveFilter();
     public void add_first_element_to_basket() {
 devicePage.chooseFirtDeviceWithList();
 devicePage.clickOnAddToBasket();
+        Allure.addAttachment("Any text1111", new ByteArrayInputStream(((TakesScreenshot) DriverManager.getWebDriver()).getScreenshotAs(OutputType.BYTES)));
+
     }
     @When("Open basket")
     public void open_basket() {
