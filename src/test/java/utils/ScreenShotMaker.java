@@ -24,7 +24,9 @@ public class ScreenShotMaker {
 
                 try {
                     Allure.addAttachment("Failed step", new FileInputStream(Screenshots.takeScreenShotAsFile()));
-                } catch (FileNotFoundException ignored) {}
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
             }
 
 
