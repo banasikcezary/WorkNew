@@ -13,7 +13,7 @@
         <selenium-java>3.141.59</selenium-java>
         <cucumber-java>4.8.1</cucumber-java>
         <cucumber-testng>4.8.1</cucumber-testng>
-        <allure-cucumber4-jvm>2.13.9</allure-cucumber4-jvm>
+        <allure-cucumber4-jvm>2.16.1</allure-cucumber4-jvm>
         <json>20090211</json>
         <selenide>5.24.2</selenide>
         <log4j-core>2.10.0</log4j-core>
