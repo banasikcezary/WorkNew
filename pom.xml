@@ -68,7 +68,11 @@
                     <version>${allure-cucumber4-jvm}</version>
                 </dependency>
 
-
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>2.16.1</version>
+        </dependency>
 
 
 
