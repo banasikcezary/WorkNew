@@ -54,7 +54,6 @@ filterPage.clickApproveFilter();
     public void add_first_element_to_basket() {
 devicePage.chooseFirtDeviceWithList();
 devicePage.clickOnAddToBasket();
-        Allure.addAttachment("Any text1111", new ByteArrayInputStream(((TakesScreenshot) DriverManager.getWebDriver()).getScreenshotAs(OutputType.BYTES)));
 
     }
     @When("Open basket")

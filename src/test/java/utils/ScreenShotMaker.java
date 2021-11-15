@@ -15,14 +15,7 @@ import java.io.File;
 
 public class ScreenShotMaker {
 
-//    @AfterStep
-//    @Attachment(value = "Page screenshot test failure", type = "image/png")
-//    public static byte[] makeScreenShot()  {
-//        byte[] screenshotFile = ((TakesScreenshot) DriverManager.getWebDriver()).getScreenshotAs(OutputType.BYTES);
-//
-//        return screenshotFile;
-//    }
-@AfterStep
+
 public static void makeScreenShot()  {
     Allure.addAttachment("Any text1111", new ByteArrayInputStream(((TakesScreenshot) DriverManager.getWebDriver()).getScreenshotAs(OutputType.BYTES)));
 
