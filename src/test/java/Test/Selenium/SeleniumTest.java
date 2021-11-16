@@ -8,6 +8,7 @@ import PageObjects.StartPage;
 import driver.manager.DriverManager;
 import driver.manager.DriverUtils;
 import io.cucumber.core.api.Scenario;
+import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -28,7 +29,7 @@ FilterPage filterPage=new FilterPage();
 
 
 
-    @AfterStep
+    @After
     public void makeScreenShot(Scenario scenario)  {
         System.out.println("SPRAWDZENIEEEEEEE");
         if(!scenario.getStatus().equals(Status.PASSED)){
