@@ -7,9 +7,17 @@ import PageObjects.StartPage;
 
 import driver.manager.DriverManager;
 import driver.manager.DriverUtils;
+import io.cucumber.core.api.Scenario;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.qameta.allure.Allure;
+import io.qameta.allure.model.Status;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
+import java.io.ByteArrayInputStream;
 
 
 public class SeleniumTest {
@@ -17,6 +25,19 @@ public class SeleniumTest {
 BasketPage basketPage=new BasketPage();
 DevicePage devicePage=new DevicePage();
 FilterPage filterPage=new FilterPage();
+
+
+
+    @AfterStep
+    public void makeScreenShot(Scenario scenario)  {
+        System.out.println("SPRAWDZENIEEEEEEE");
+        if(!scenario.getStatus().equals(Status.PASSED)){
+            System.out.println("@@@@@@@@@ cos sie wyjebalo");
+            Allure.addAttachment("Any text1111", new ByteArrayInputStream(((TakesScreenshot) DriverManager.getWebDriver()).getScreenshotAs(OutputType.BYTES)));
+        }
+
+    }
+
 
 
     @Given("Open browser and configuration")
