@@ -1,3 +1,4 @@
+@Selenium
 Feature: Shop
   Scenario: Choose phone with list
     Given Open browser and configuration

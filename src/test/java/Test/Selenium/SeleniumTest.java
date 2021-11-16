@@ -29,7 +29,7 @@ FilterPage filterPage=new FilterPage();
 
 
 
-    @After
+    @After("@Selenium")
     public void makeScreenShot(Scenario scenario)  {
         if(!scenario.getStatus().equals(Status.PASSED)){
             Allure.addAttachment("Test fail", new ByteArrayInputStream(((TakesScreenshot) DriverManager.getWebDriver()).getScreenshotAs(OutputType.BYTES)));
