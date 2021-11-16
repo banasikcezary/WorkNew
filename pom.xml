@@ -138,9 +138,9 @@
                     <systemPropertyVariables>
                         <allure.results.directory>${basedir}/target/allure-results</allure.results.directory>
                     </systemPropertyVariables>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/all_test_suite.xml</suiteXmlFile>
-                    </suiteXmlFiles>
+<!--                    <suiteXmlFiles>-->
+<!--                        <suiteXmlFile>src/test/resources/all_test_suite.xml</suiteXmlFile>-->
+<!--                    </suiteXmlFiles>-->
                     <!--Konfiguracja Allura ze ścieżką do biblioteki aspectjweaver-->
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
