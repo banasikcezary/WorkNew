@@ -19,15 +19,12 @@ public class ScreenShotMaker {
 
     @AfterStep
 public void makeScreenShot(Scenario scenario)  {
-//    try {
-//        System.out.println("SPRAWDZENIEEEEEEE");
-//        if(!scenario.getStatus().equals(Status.PASSED)){
-//            System.out.println("@@@@@@@@@ cos sie wyjebalo");
+        System.out.println("SPRAWDZENIEEEEEEE");
+        if(!scenario.getStatus().equals(Status.PASSED)){
+            System.out.println("@@@@@@@@@ cos sie wyjebalo");
             Allure.addAttachment("Any text1111", new ByteArrayInputStream(((TakesScreenshot) DriverManager.getWebDriver()).getScreenshotAs(OutputType.BYTES)));
-//        }
-//    }catch (Exception e){
-//        System.out.println(e);
-//    }
+        }
+
 
 
 }
