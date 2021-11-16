@@ -31,10 +31,8 @@ FilterPage filterPage=new FilterPage();
 
     @After
     public void makeScreenShot(Scenario scenario)  {
-        System.out.println("SPRAWDZENIEEEEEEE");
         if(!scenario.getStatus().equals(Status.PASSED)){
-            System.out.println("@@@@@@@@@ cos sie wyjebalo");
-            Allure.addAttachment("Any text1111", new ByteArrayInputStream(((TakesScreenshot) DriverManager.getWebDriver()).getScreenshotAs(OutputType.BYTES)));
+            Allure.addAttachment("Test fail", new ByteArrayInputStream(((TakesScreenshot) DriverManager.getWebDriver()).getScreenshotAs(OutputType.BYTES)));
         }
 
     }
